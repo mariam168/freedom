@@ -1,0 +1,99 @@
+{
+  "common": {
+    "appName": "Al-Hurriya Foundation",
+    "contactUs": "Contact Us"
+  },
+  "navbar": {
+    "leadership": "Leadership & Expertise",
+    "services": "Our Services",
+    "methodology": "Our Methodology",
+    "facilities": "Our Healing Environment"
+  },
+  "hero": {
+    "trustedPartner": "Your Trusted Partner on the Journey to Recovery",
+    "title": "The Path to <1>Freedom</1> Begins with a Step.",
+    "description": "With you step-by-step towards full recovery. A safe environment, a professional team, and unlimited support to start a new life full of inner peace.",
+    "ctaButton": "Start Consultation",
+    "imageAlt": "A path symbolizing hope"
+  },
+  "leadership": {
+    "title": "Inspiring Leadership & Global Expertise",
+    "description": "Our therapeutic journey is led by a name synonymous with trust and experience, <1>Dr. Ihab El-Kharrat</1>, supported by an elite team of doctors and specialists with the highest international qualifications.",
+    "card1Title": "Elite Team",
+    "card1Desc": "Doctors, psychologists, and recovery coaches work as one team to support you throughout your journey.",
+    "card2Title": "International Qualifications",
+    "card2Desc": "Prestigious international experience and accreditations ensure you receive professional and safe medical care.",
+    "card3Title": "Official Accreditation",
+    "card3Desc": "Accredited by the General Secretariat of Mental Health of the Egyptian Ministry of Health."
+  },
+  "services": {
+    "title": "Specialized Treatment Programs for Every Challenge",
+    "description": "Whatever the addiction, we have the optimal treatment path to help you.",
+    "card1Title": "Substance Addiction",
+    "card1Points": [
+      "Treatment for heroin and opioid addiction.",
+      "Treatment for stimulants like crystal meth.",
+      "Programs for safe withdrawal from cannabis and alcohol.",
+      "Managing addiction to medications and tranquilizers."
+    ],
+    "card2Title": "Behavioral Addiction",
+    "card2Points": [
+      "Treatment for internet and social media addiction.",
+      "Programs for treating sex and pornography addiction.",
+      "Overcoming gambling and betting addiction."
+    ],
+    "card3Title": "Trauma Recovery",
+    "card4Title": "Mental Health Programs",
+    "card5Title": "Psychological & Financial Support",
+    "genericDesc": "A comprehensive program tailored to your needs."
+  },
+  "methodology": {
+    "title": "Your Journey to <1>Freedom</1> Begins with Confident Steps",
+    "description": "We understand that every experience is unique, so we accompany you step-by-step with a personalized treatment plan in a safe and professional environment.",
+    "step1Title": "Initial Consultation",
+    "step1Desc": "A first confidential call to accurately understand your needs.",
+    "step2Title": "Personalized Plan Design",
+    "step2Desc": "We create an integrated treatment plan that suits your condition and aspirations.",
+    "step3Title": "Starting Treatment",
+    "step3Desc": "You join a safe and supportive environment that helps you change and recover.",
+    "step4Title": "Ongoing Support",
+    "step4Desc": "We remain by your side even after the program ends to solidify your recovery.",
+    "visualCardTitle": "Comfort. Safety. A New Beginning.",
+    "visualCardDesc": "We believe recovery begins not with fear, but with trust. Let us guide you calmly to a more balanced and free life."
+  },
+  "facilities": {
+    "title": "A Healing Environment that Embraces Recovery",
+    "description": "Because we know the treatment environment is integral to its success, we designed Al-Hurriya Foundation to be an oasis of tranquility and healing. Explore our facilities.",
+    "filterAll": "Show All",
+    "categories": {
+      "accommodation": "Hotel-like Accommodation",
+      "sports": "Sports Facilities",
+      "therapy": "Therapeutic Spaces",
+      "outdoor": "Outdoor Areas"
+    },
+    "images": {
+      "groupRoom": "A room for a group of people",
+      "doubleRoom": "A room for two people",
+      "singleRoom": "A luxurious single-person room",
+      "gym": "A fully equipped gym",
+      "sportsActivities": "Fully equipped sports activities",
+      "pool": "Outdoor swimming pool",
+      "groupTherapy": "Group therapy session hall",
+      "garden": "A quiet garden for meditation and relaxation",
+      "building": "The exterior of the foundation's building",
+      "loungeArea": "An outdoor relaxation area with a calm atmosphere"
+    }
+  },
+  "whatsapp": {
+    "title": "Al-Hurriya Foundation",
+    "replyTime": "Usually replies within minutes",
+    "welcomeMessage": "Welcome! How can we help you today? We are here to support you every step of the way. Your inquiries are completely confidential.",
+    "predefinedMessage": "Hello Al-Hurriya Foundation, I have a question:",
+    "placeholder": "Type your message here...",
+    "sendLabel": "Send message",
+    "openChatLabel": "Open chat with WhatsApp"
+  },
+  "footer": {
+    "copyright": "© 2025 Al-Hurriya Recovery Center. All rights reserved."
+  }
+}
