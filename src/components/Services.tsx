@@ -20,14 +20,13 @@ const Services = (): React.JSX.Element => {
           <ServiceCard
             icon={<FaPills className="text-3xl text-teal-600" />}
             title={t('services.card1Title')}
-            points={t('services.card1Points', { returnObjects: true })}
+            points={t('services.card1Points', { returnObjects: true }) as string[]}
           />
           <ServiceCard
             icon={<FaLaptop className="text-3xl text-blue-600" />}
             title={t('services.card2Title')}
-            points={t('services.card2Points', { returnObjects: true })}
+            points={t('services.card2Points', { returnObjects: true }) as string[]}
           />
-
           <ServiceCard
             icon={<FaHeartbeat className="text-3xl text-pink-500" />}
             title={t('services.card3Title')}
@@ -54,6 +53,7 @@ interface ServiceCardProps {
   points?: string[];
   center?: boolean;
 }
+
 const ServiceCard = ({ icon, title, points = [], center = false }: ServiceCardProps) => {
   const { t } = useTranslation();
   const isEmpty = points.length === 0;

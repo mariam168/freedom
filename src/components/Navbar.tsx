@@ -39,7 +39,7 @@ const Navbar = (): React.JSX.Element => {
     { href: '#facilities', text: t('navbar.facilities') },
   ];
 
-  const HOSPITAL_WHATSAPP_NUMBER = "201223358023";
+  const HOSPITAL_WHATSAPP_NUMBER = "201201502444";
   const predefinedText = t('whatsapp.predefinedMessage');
   const encodedMessage = encodeURIComponent(predefinedText);
   const whatsappUrl = `https://wa.me/${HOSPITAL_WHATSAPP_NUMBER}?text=${encodedMessage}`;

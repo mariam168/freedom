@@ -35,7 +35,7 @@ const HeroWithImage = (): React.JSX.Element => {
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center bg-gradient-to-r from-blue-600 to-teal-500 text-white py-4 px-10 rounded-full text-lg font-bold
-                transition-all duration-300 ease-in-out shadow-md hover:shadow-lg hover:shadow-teal-300/50 transform hover:scale-105"
+                transition-all mb-10 duration-300 ease-in-out shadow-md hover:shadow-lg hover:shadow-teal-300/50 transform hover:scale-105"
             >
               <span>{t('hero.ctaButton')}</span>
               <ArrowIcon 

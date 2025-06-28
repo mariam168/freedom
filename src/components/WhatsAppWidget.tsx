@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FaWhatsapp } from 'react-icons/fa';
 import { FiX, FiSend } from 'react-icons/fi';
+
 const HOSPITAL_WHATSAPP_NUMBER = "201288590178";
+
 const WhatsAppWidget = (): React.JSX.Element => {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -26,13 +28,15 @@ const WhatsAppWidget = (): React.JSX.Element => {
   };
 
   return (
-    <div 
-      className="fixed z-50 font-cairo"
-      style={{
-        bottom: '1.5rem', 
-        right: '1.5rem'   
-      }}
-    >
+    // ✅ --- هذا هو الحل الصحيح --- ✅
+    // نستخدم "start-6" ليتم وضع العنصر على اليسار في LTR وعلى اليمين في RTL
+    <div className="fixed bottom-6 start-6 z-50 font-cairo">
+      {/* 
+        عندما تكون اللغة إنجليزية (LTR)، "start-6" ستعادل "left: 1.5rem".
+        عندما تكون اللغة عربية (RTL)، "start-6" ستعادل "right: 1.5rem".
+      */}
+
+      {/* نافذة الدردشة (Modal) */}
       <div 
         className={`bg-white rounded-xl shadow-2xl w-80 mb-4 transition-all duration-300 ease-in-out
                    ${isOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}
@@ -68,6 +72,7 @@ const WhatsAppWidget = (): React.JSX.Element => {
           </button>
         </div>
       </div>
+      {/* الفقاعة العائمة (Chat Bubble) */}
       <button 
         onClick={() => setIsOpen(!isOpen)}
         className="bg-green-500 text-white rounded-full p-4 shadow-xl
