@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Navbar from './components/Navbar';
 import PhoneBar from './components/PhoneBar';
-import HeroWithImage from './components/HeroWithImage'; // تأكدت من استخدام الاسم الصحيح
+import HeroWithImage from './components/Hero';
 import Leadership from './components/Leadership';
 import Services from './components/Services';
 import Methodology from './components/Methodology';
