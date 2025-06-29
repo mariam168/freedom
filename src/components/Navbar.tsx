@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { FiMenu, FiX, FiChevronLeft } from 'react-icons/fi';
 
-// واجهة لتعريف خصائص الروابط (ممارسة جيدة في TypeScript)
 interface NavLink {
   href: string;
   text: string;
@@ -13,20 +12,17 @@ const Navbar = (): React.JSX.Element => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // 1. تأثير جانبي لمنع تمرير الصفحة عند فتح قائمة الجوال (UX)
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
-    // دالة التنظيف لإعادة التمرير في حال تم إغلاق المكون
     return () => {
       document.body.style.overflow = 'unset';
     };
   }, [isOpen]);
 
-  // تأثير جانبي لمراقبة التمرير وتغيير خلفية الـ Navbar
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 10);
@@ -35,7 +31,6 @@ const Navbar = (): React.JSX.Element => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // تعريف روابط التنقل باستخدام الترجمة
   const navLinks: NavLink[] = [
     { href: '#leadership', text: t('navbar.leadership') },
     { href: '#services', text: t('navbar.services') },
@@ -43,7 +38,6 @@ const Navbar = (): React.JSX.Element => {
     { href: '#facilities', text: t('navbar.facilities') },
   ];
 
-  // إعداد رابط الواتساب لزر "تواصل معنا"
   const HOSPITAL_WHATSAPP_NUMBER = "201201502444";
   const predefinedText = t('whatsapp.predefinedMessage');
   const encodedMessage = encodeURIComponent(predefinedText);
@@ -51,7 +45,6 @@ const Navbar = (): React.JSX.Element => {
 
   return (
     <>
-      {/* شريط التنقل الرئيسي */}
       <nav
         className={`fixed top-16 md:top-9 w-full z-40 font-cairo transition-shadow duration-300 ease-in-out ${
           scrolled ? 'bg-white shadow-lg' : 'bg-white/80 backdrop-blur-md shadow-sm'
@@ -65,7 +58,6 @@ const Navbar = (): React.JSX.Element => {
             {t('common.appName')}
           </a>
 
-          {/* 2. روابط سطح المكتب (تختفي على الجوال) */}
           <div className="hidden md:flex items-center gap-x-6">
             {navLinks.map((link) => (
               <a
@@ -89,7 +81,6 @@ const Navbar = (): React.JSX.Element => {
             </a>
           </div>
 
-          {/* 3. عناصر التحكم في الجوال (تظهر فقط على الجوال) */}
           <div className="md:hidden flex items-center gap-4">
             <a
               href={whatsappUrl}
@@ -106,10 +97,12 @@ const Navbar = (): React.JSX.Element => {
         </div>
       </nav>
 
-      {/* 4. قائمة الجوال المنسدلة (تغطي الشاشة بالكامل) */}
       <div
-        className={`fixed inset-0 z-50 bg-white transform transition-transform duration-300 ease-in-out md:hidden
-                   ${isOpen ? 'translate-x-0' : (i18n.language === 'ar' ? 'translate-x-full' : '-translate-x-full')}`}
+        className={`fixed inset-0 z-50 bg-white transform transition-transform duration-300 ease-in-out md:hidden ${
+          isOpen
+            ? 'translate-x-0' 
+            : (i18n.language === 'ar' ? 'translate-x-full' : '-translate-x-full') + ' pointer-events-none' 
+        }`}
       >
         <div className="flex justify-between items-center p-6 border-b">
           <span className="font-bold text-lg text-teal-600">{t('common.appName')}</span>

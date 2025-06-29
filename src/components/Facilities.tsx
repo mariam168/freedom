@@ -10,11 +10,13 @@ import outdoor3 from '../images/outdoor (3).jpeg';
 import entertainment from '../images/entertainment (1).jpeg';
 import entertainment2 from '../images/entertainment (2).jpeg';
 import entertainment3 from '../images/entertainment (3).jpeg';
+
 type ImageItem = {
   src: string;
   alt: string;
   category: 'accommodation' | 'sports' | 'therapy' | 'outdoor';
 };
+
 type Category = {
   id: 'accommodation' | 'sports' | 'therapy' | 'outdoor';
   name: string;
@@ -23,6 +25,7 @@ type Category = {
 const Facilities = (): React.JSX.Element => {
   const { t } = useTranslation();
   const [activeCategory, setActiveCategory] = useState<'all' | ImageItem['category']>('all');
+
   const allImages: ImageItem[] = [
     { src: bed1, alt: t('facilities.images.groupRoom'), category: 'accommodation' },
     { src: bed3, alt: t('facilities.images.doubleRoom'), category: 'accommodation' },
@@ -35,16 +38,19 @@ const Facilities = (): React.JSX.Element => {
     { src: outdoor2, alt: t('facilities.images.building'), category: 'outdoor' },
     { src: outdoor3, alt: t('facilities.images.loungeArea'), category: 'outdoor' },
   ];
+
   const categories: Category[] = [
     { id: 'accommodation', name: t('facilities.categories.accommodation') },
     { id: 'sports', name: t('facilities.categories.sports') },
     { id: 'therapy', name: t('facilities.categories.therapy') },
     { id: 'outdoor', name: t('facilities.categories.outdoor') },
   ];
+
   const filteredImages =
     activeCategory === 'all'
       ? allImages
       : allImages.filter((img) => img.category === activeCategory);
+
   return (
     <section id="facilities" className="py-24 bg-[#f9fbfc] font-cairo">
       <div className="container mx-auto px-6">
@@ -94,11 +100,13 @@ const Facilities = (): React.JSX.Element => {
     </section>
   );
 };
+
 interface FilterButtonProps {
   active: boolean;
   onClick: () => void;
   label: string;
 }
+
 const FilterButton = ({ active, onClick, label }: FilterButtonProps) => {
   return (
     <button

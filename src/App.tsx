@@ -1,5 +1,3 @@
-// src/App.jsx
-
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Navbar from './components/Navbar';
@@ -9,7 +7,7 @@ import Leadership from './components/Leadership';
 import Services from './components/Services';
 import Methodology from './components/Methodology';
 import Facilities from './components/Facilities';
-import Footer from './components/Footer'; 
+import Footer from './components/Footer';
 import WhatsAppWidget from './components/WhatsAppWidget';
 
 function App(): React.JSX.Element {
@@ -24,7 +22,6 @@ function App(): React.JSX.Element {
     <div className="relative">
       <PhoneBar />
       <Navbar />
-      {/* هذا الـ padding لا يزال ضروريًا لدفع المحتوى بأكمله لأسفل */}
       <main className="pt-[150px] md:pt-[120px]">
         <HeroWithImage />
         <Leadership />
@@ -32,7 +29,6 @@ function App(): React.JSX.Element {
         <Methodology />
         <Facilities />
       </main>
-      
       <Footer />
       <WhatsAppWidget />
     </div>

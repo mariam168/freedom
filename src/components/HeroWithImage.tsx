@@ -1,5 +1,3 @@
-// src/components/HeroWithImage.js
-
 import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import { FaArrowLeft, FaArrowRight, FaCheckCircle, FaStar } from 'react-icons/fa';
@@ -15,14 +13,10 @@ const HeroWithImage = (): React.JSX.Element => {
   const whatsappUrl = `https://wa.me/${HOSPITAL_WHATSAPP_NUMBER}?text=${encodedMessage}`;
 
   return (
-    // ✅ --- هذا هو الحل الجديد --- ✅
-    // 1. أعدنا min-h-screen و flex، لكن أزلنا items-center
-    // 2. أضفنا justify-center لتوسيط المحتوى أفقيًا
     <section
       id="hero"
       className="relative z-1 min-h-screen flex justify-center font-cairo bg-gradient-to-b from-[#f0f4f8] to-white overflow-hidden"
     >
-      {/* 3. أضفنا padding علوي وسفلي هنا للتحكم في المساحة العمودية */}
       <div className="container max-w-7xl mx-auto px-6 relative z-10 py-16 lg:py-0 flex items-center">
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-16">
           <div className="lg:w-1/2 text-center lg:text-start">
@@ -43,15 +37,11 @@ const HeroWithImage = (): React.JSX.Element => {
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center bg-gradient-to-r from-blue-600 to-teal-500 text-white py-4 px-10 rounded-full text-lg font-bold
-                transition-all mb-10 duration-300 ease-in-out shadow-md hover:shadow-lg hover:shadow-teal-300/50 transform hover:scale-105"
+              transition-all mb-10 duration-300 ease-in-out shadow-md hover:shadow-lg hover:shadow-teal-300/50 transform hover:scale-105"
             >
               <span>{t('hero.ctaButton')}</span>
-              <ArrowIcon 
-                className={`
-                  transition-transform duration-300
-                  rtl:mr-3 ltr:ml-3 
-                  rtl:group-hover:-translate-x-1 ltr:group-hover:translate-x-1
-                `} 
+              <ArrowIcon
+                className="transition-transform duration-300 rtl:mr-3 ltr:ml-3 rtl:group-hover:-translate-x-1 ltr:group-hover:translate-x-1"
               />
             </a>
           </div>
