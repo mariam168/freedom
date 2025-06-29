@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* src/index.css */
+
+/* ... (كود CSS الحالي لديك) ... */
+
+/* 
+  الحل لمشكلة الروابط الداخلية (Anchor Links) مع الـ Header الثابت
+  هذا الكود يخبر المتصفح بأن يترك مسافة في الأعلى عند التمرير إلى أي قسم
+  بحيث لا يغطيه الـ Navbar.
+*/
+section[id] {
+  scroll-margin-top: 150px; /* مسافة للجوال */
+}
+
+@media (min-width: 768px) {
+  section[id] {
+    scroll-margin-top: 120px; /* مسافة للحاسوب */
+  }
+}
