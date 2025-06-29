@@ -15,14 +15,15 @@ const HeroWithImage = (): React.JSX.Element => {
   const whatsappUrl = `https://wa.me/${HOSPITAL_WHATSAPP_NUMBER}?text=${encodedMessage}`;
 
   return (
-    // ✅ --- هذا هو التعديل الرئيسي --- ✅
-    // 1. أزلنا min-h-screen و flex و items-center.
-    // 2. أضفنا padding عمودي (py-20) للتحكم في المساحة الداخلية.
+    // ✅ --- هذا هو الحل الجديد --- ✅
+    // 1. أعدنا min-h-screen و flex، لكن أزلنا items-center
+    // 2. أضفنا justify-center لتوسيط المحتوى أفقيًا
     <section
       id="hero"
-      className="relative z-1 font-cairo bg-gradient-to-b from-[#f0f4f8] to-white overflow-hidden py-20 lg:py-24"
+      className="relative z-1 min-h-screen flex justify-center font-cairo bg-gradient-to-b from-[#f0f4f8] to-white overflow-hidden"
     >
-      <div className="container max-w-7xl mx-auto px-6">
+      {/* 3. أضفنا padding علوي وسفلي هنا للتحكم في المساحة العمودية */}
+      <div className="container max-w-7xl mx-auto px-6 relative z-10 py-16 lg:py-0 flex items-center">
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-16">
           <div className="lg:w-1/2 text-center lg:text-start">
             <div className="inline-flex items-center bg-blue-100 text-blue-700 py-1 px-4 rounded-full text-sm font-semibold mb-5 gap-2">
