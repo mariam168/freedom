@@ -1,3 +1,5 @@
+// src/components/HeroWithImage.js
+
 import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import { FaArrowLeft, FaArrowRight, FaCheckCircle, FaStar } from 'react-icons/fa';
@@ -13,14 +15,14 @@ const HeroWithImage = (): React.JSX.Element => {
   const whatsappUrl = `https://wa.me/${HOSPITAL_WHATSAPP_NUMBER}?text=${encodedMessage}`;
 
   return (
-    // ✅ --- هذا هو التعديل الأول --- ✅
-    // أضفنا z-1 هنا لضمان أن هذا القسم له stacking context خاص به
-    // لكنه يظل تحت الـ Navbar (z-40) والـ WhatsApp Widget (z-50)
+    // ✅ --- هذا هو التعديل الرئيسي --- ✅
+    // 1. أزلنا min-h-screen و flex و items-center.
+    // 2. أضفنا padding عمودي (py-20) للتحكم في المساحة الداخلية.
     <section
       id="hero"
-      className="relative z-1 min-h-screen flex items-center justify-center font-cairo bg-gradient-to-b from-[#f0f4f8] to-white overflow-hidden pt-20 lg:pt-0"
+      className="relative z-1 font-cairo bg-gradient-to-b from-[#f0f4f8] to-white overflow-hidden py-20 lg:py-24"
     >
-      <div className="container max-w-7xl mx-auto px-6 relative z-10">
+      <div className="container max-w-7xl mx-auto px-6">
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-16">
           <div className="lg:w-1/2 text-center lg:text-start">
             <div className="inline-flex items-center bg-blue-100 text-blue-700 py-1 px-4 rounded-full text-sm font-semibold mb-5 gap-2">
@@ -52,7 +54,7 @@ const HeroWithImage = (): React.JSX.Element => {
               />
             </a>
           </div>
-          <div className="lg:w-1/2 flex justify-center lg:justify-end relative">
+          <div className="lg:w-1/2 flex justify-center lg:justify-end">
             <div className="relative w-full max-w-md overflow-hidden rounded-3xl group">
               <img
                 src={heroImage}

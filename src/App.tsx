@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Navbar from './components/Navbar';
 import PhoneBar from './components/PhoneBar';
-import HeroWithImage from './components/Hero';
+import HeroWithImage from './components/HeroWithImage';
 import Leadership from './components/Leadership';
 import Services from './components/Services';
 import Methodology from './components/Methodology';
@@ -21,18 +21,10 @@ function App(): React.JSX.Element {
   }, [i18n, i18n.language]);
 
   return (
-    // استخدام div خارجي مع relative هو أفضل ممارسة
     <div className="relative">
       <PhoneBar />
       <Navbar />
-
-      {/* ✅ --- هذا هو الحل الجذري والنهائي للمشكلة --- ✅ */}
-      {/* 
-        نعطي مساحة علوية كافية (padding-top) للمحتوى الرئيسي.
-        - 150px على الجوال (لأن PhoneBar + Navbar يأخذان حوالي 132px).
-        - 120px على الحاسوب (لأن PhoneBar + Navbar يأخذان حوالي 104px).
-        هذا يضمن أن قسم Hero يبدأ "بعد" الـ Navbar تمامًا، وليس تحته.
-      */}
+      {/* هذا الـ padding لا يزال ضروريًا لدفع المحتوى بأكمله لأسفل */}
       <main className="pt-[150px] md:pt-[120px]">
         <HeroWithImage />
         <Leadership />
