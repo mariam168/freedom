@@ -1,8 +1,10 @@
+// src/App.jsx
+
 import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import Navbar from './components/Navbar';
 import PhoneBar from './components/PhoneBar';
-import Hero from './components/Hero'; // تأكد من أن هذا هو اسم المكون الصحيح (HeroWithImage)
+import HeroWithImage from './components/HeroWithImage'; // تأكدت من استخدام الاسم الصحيح
 import Leadership from './components/Leadership';
 import Services from './components/Services';
 import Methodology from './components/Methodology';
@@ -19,19 +21,20 @@ function App(): React.JSX.Element {
   }, [i18n, i18n.language]);
 
   return (
-    // 1. أضفنا حاوية خارجية بـ relative كأفضل ممارسة
+    // استخدام div خارجي مع relative هو أفضل ممارسة
     <div className="relative">
       <PhoneBar />
       <Navbar />
 
-      {/* ✅ --- هذا هو السطر الذي تم تصحيحه --- ✅ */}
+      {/* ✅ --- هذا هو الحل الجذري والنهائي للمشكلة --- ✅ */}
       {/* 
-        أعطينا padding-top كافٍ ومتجاوب لضمان أن المحتوى يبدأ بعد الـ Navbar.
-        - pt-[150px] على الجوال.
-        - md:pt-[120px] على الشاشات الأكبر.
+        نعطي مساحة علوية كافية (padding-top) للمحتوى الرئيسي.
+        - 150px على الجوال (لأن PhoneBar + Navbar يأخذان حوالي 132px).
+        - 120px على الحاسوب (لأن PhoneBar + Navbar يأخذان حوالي 104px).
+        هذا يضمن أن قسم Hero يبدأ "بعد" الـ Navbar تمامًا، وليس تحته.
       */}
       <main className="pt-[150px] md:pt-[120px]">
-        <Hero />
+        <HeroWithImage />
         <Leadership />
         <Services />
         <Methodology />
