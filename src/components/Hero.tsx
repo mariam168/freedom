@@ -2,7 +2,9 @@ import React from 'react';
 import { useTranslation, Trans } from 'react-i18next';
 import { FaArrowLeft, FaArrowRight, FaCheckCircle, FaStar } from 'react-icons/fa';
 import heroImage from '../images/hero.png';
+
 const HOSPITAL_WHATSAPP_NUMBER = "201201502444";
+
 const HeroWithImage = (): React.JSX.Element => {
   const { t, i18n } = useTranslation();
   const ArrowIcon = i18n.language === 'ar' ? FaArrowLeft : FaArrowRight;
@@ -11,9 +13,12 @@ const HeroWithImage = (): React.JSX.Element => {
   const whatsappUrl = `https://wa.me/${HOSPITAL_WHATSAPP_NUMBER}?text=${encodedMessage}`;
 
   return (
+    // ✅ --- هذا هو التعديل الأول --- ✅
+    // أضفنا z-1 هنا لضمان أن هذا القسم له stacking context خاص به
+    // لكنه يظل تحت الـ Navbar (z-40) والـ WhatsApp Widget (z-50)
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center font-cairo bg-gradient-to-b from-[#f0f4f8] to-white overflow-hidden pt-20 lg:pt-0"
+      className="relative z-1 min-h-screen flex items-center justify-center font-cairo bg-gradient-to-b from-[#f0f4f8] to-white overflow-hidden pt-20 lg:pt-0"
     >
       <div className="container max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col-reverse lg:flex-row items-center justify-between gap-16">
@@ -57,7 +62,6 @@ const HeroWithImage = (): React.JSX.Element => {
               <FaStar className="absolute top-4 start-4 text-yellow-400 animate-spin-slow text-xl opacity-80" />
             </div>
           </div>
-
         </div>
       </div>
     </section>
