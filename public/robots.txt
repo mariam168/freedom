@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://freedom-git-main-freedoms-projects-4abf221b.vercel.app/sitemap.xml
