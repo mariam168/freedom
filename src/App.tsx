@@ -12,6 +12,7 @@ import WhatsAppWidget from './components/WhatsAppWidget';
 
 function App(): React.JSX.Element {
   const { i18n } = useTranslation();
+  
 
   useEffect(() => {
     document.documentElement.lang = i18n.language;
